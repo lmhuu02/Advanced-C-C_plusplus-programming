@@ -1,0 +1,32 @@
+#include "stdio.h"
+
+int main(){
+
+	FILE *f;
+    f=fopen("demo.txt","r+");
+   // kiểm tra có tạo dc con trỏ hay ko
+   if(f == NULL) {
+        printf("%s file not open!\n", f);
+        return -1;
+    } else printf(" \nsuccess222222!!");
+    
+    int ai,n=0;
+    // đếm số phần tử
+    while(fscanf(f,"%d",&ai)>0) 
+    n++;
+    // tạo mảng rev có kích thước là số lượng pt đếm được
+    int rev[n];
+    
+// set con trỏ về đầu
+     fseek( f, 0, SEEK_SET );
+//đọc mảng
+      for(int i=0; i<n;i++){
+      	fscanf(f,"%d",&rev[i]);
+      	
+     }
+    fclose(f);
+    printf("DS mang doc duoc la : \n");
+ 	for(int i=0; i<n;i++){
+      printf("%2d",rev[i]);
+     }
+}

@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void hoandoi(int &a, int &b){
+	int temp = a;
+	a = b;
+	b = temp;
+}
+int demhh(int n){
+	int d=0;
+    int tong=0;
+    for(int i=1;i<n;i++){
+    	
+    	if(n%i==0){
+    		tong+=i;
+		}
+		}if(tong==n){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+int cp(int a){
+    int b=sqrt(a);
+	if(b * b == a)return 1;
+	return 0;
+}
+
+int main(){
+	
+	//ar[n] = {4,3,5,1,10};
+	
+	int n,m,ar[n][m],*ptr,sum=0;
+	printf("nhap so hang : \n");
+	scanf("%d",&n);
+	printf("nhap so cot : \n");
+	scanf("%d",&m);
+	ptr = (int*)malloc(n*m*sizeof(int));
+	
+	printf("nhap phan tu cho mang: \n");
+	for(int i=0; i <n; i++){
+		for(int j=0; j <m; j++){
+		printf("nhap phan tu a[%d][%d] = \n" ,i ,j);
+		scanf("%d",ptr+i*m+j);
+	}
+	}
+	//hien thi va tinh tong
+	printf("\nMang vua nhap la: \n");
+	for(int i = 0; i <n; i++){
+		for(int j=0; j <m; j++){
+		printf("%d ",*(ptr+i*m + j));//ar[i]
+}
+	printf("\n");
+}
+	
+	printf("\nCac so chinh phuong trong mang la: ");
+	for(int i = 0; i < n; i++){
+		for(int j = 0 ; j < m; j++){
+	    if(cp(*(ptr+i*m + j))){
+	    	printf("%2d ",*(ptr+i*m + j));
+		}
+	}
+}
+    //d, Tính t?ng các ph?n t? là s? có hai ch? s? và hàng don v? b?ng 7.
+    
+    int tong1=0;
+    for(int i=0;i<n;i++){
+    	for(int j=0; j <m; j++){
+	if( *(ptr+i*m + j) > 10 && *(ptr+i*m + j) <99 && *(ptr+i*m + j)%10==7 ){	
+		tong1+=*(ptr+i*m + j);
+	}
+	}
+	}
+	printf("\nTong cac so 2 chu so va dv = 7 la %d ",tong1);
+}

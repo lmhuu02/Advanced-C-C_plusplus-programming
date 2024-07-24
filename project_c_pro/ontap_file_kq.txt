@@ -1,0 +1,4 @@
+tong = 44
+xin chao cac ban
+gia tri min: 1 
+cac so chinh phuong trong mang la:  4 	 9 	 1 	

@@ -1,0 +1,3 @@
+
+tong cac phan tu mang la: 29
+danh sach so chinh phuong la: 4	9	
